@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -73,16 +73,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#Mac加载内核提示签名失败</p>
-<p>##加载内核扩展时</p>
-<figure class="highlight plain"><figcaption><span>KernelHelloWorld.kext</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/System/Library/Extensions/KernelHelloWorld.kext failed to load - (libkern/kext) not loadable (reason unspecified); check the system/kernel logs for errors or try kextutil(8).</div></pre></td></tr></table></figure>
-<p>使用kextutil查看错误信息<br><figure class="highlight plain"><figcaption><span>for</span><a href="/System/Library/Extensions/KernelHelloWorld.kext:">link</a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Code Signing Failure: not code signed</div><div class="line">Untrusted kexts are not allowed</div><div class="line">ERROR: invalid signature for com.autonavi.KernelHelloWorld, will not load</div></pre></td></tr></table></figure></p>
+        <h1 id="Mac加载内核提示签名失败"><a href="#Mac加载内核提示签名失败" class="headerlink" title="Mac加载内核提示签名失败"></a>Mac加载内核提示签名失败</h1><p>使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">kextload KernelHelloWorld.kext</div></pre></td></tr></table></figure>
+<p>加载自己编写的内核时报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">kextload KernelHelloWorld.kext</div><div class="line">/System/Library/Extensions/KernelHelloWorld.kext failed to load - (libkern/kext) not loadable (reason unspecified); check the system/kernel logs for errors or try kextutil(8).</div></pre></td></tr></table></figure></p>
+<p>使用kextutil查看错误信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Diagnostics for /System/Library/Extensions/KernelHelloWorld.kext:</div><div class="line">Code Signing Failure: not code signed</div><div class="line">Untrusted kexts are not allowed</div><div class="line">ERROR: invalid signature for com.autonavi.KernelHelloWorld, will not load</div></pre></td></tr></table></figure></p>
 <p>解决方法：<br>1.重启mac后按下command+r进入恢复模式，终端输入命令<br><code>sudo nvram boot-args=kext-dev-mode=1</code><br>这命令的作用是关闭rootless功能，此功能的作用是通过签名验证应用。<br>这条命令貌似已经无效<br>2.依旧是恢复模式下，使用csrutil disable 关闭rootless功能<br>使用方法2成功解决</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/chubby/2017/03/24/Mac加载内核提示签名失败/" data-id="cj0nk79af0001fbor39pzp3rv" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/chubby/2017/03/24/Mac加载内核提示签名失败/" data-id="cj0nkc9220001i2or7dg5e8sr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -124,7 +124,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/chubby/2017/03/20/I:O Kit 笔记/" data-id="cj0nk79a90000fborknsnd66x" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/chubby/2017/03/20/I:O Kit 笔记/" data-id="cj0nkc91x0000i2orr1vdgntu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -159,7 +159,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -184,7 +184,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 fka2004<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
